@@ -18,10 +18,10 @@ export default function BookingScreen() {
   const [notes, setNotes] = useState('');
 
   const services = [
-    { id: '1', name: 'Classic Haircut', price: '$35' },
-    { id: '2', name: 'Beard Trim', price: '$20' },
-    { id: '3', name: 'Hot Shave', price: '$30' },
-    { id: '4', name: 'Full Service', price: '$75' },
+    { id: '1', name: 'Classic Haircut', price: 'R200' },
+    { id: '2', name: 'Beard Trim', price: 'R120' },
+    { id: '3', name: 'Hot Shave', price: 'R180' },
+    { id: '4', name: 'Full Service', price: 'R450' },
   ];
 
   const barbers = [
