@@ -13,39 +13,84 @@ export default function HomeScreen() {
   const services = [
     {
       id: '1',
-      title: "Classic Haircut",
-      description: "Professional haircut at your doorstep",
-      price: "R200",
+      title: "Classic Adult Haircut",
+      description: "Professional adult haircut at your doorstep",
+      price: "R225",
       duration: "30 min",
       icon: "scissors",
       color: colors.primary,
     },
     {
       id: '2',
-      title: "Beard Trim",
-      description: "Expert beard grooming and styling",
-      price: "R120",
-      duration: "20 min",
+      title: "Classic Kids Haircut",
+      description: "Gentle and fun haircut for children",
+      price: "R175",
+      duration: "25 min",
       icon: "face.smiling",
       color: colors.highlight,
     },
     {
       id: '3',
-      title: "Hot Shave",
-      description: "Traditional hot towel shave experience",
-      price: "R180",
-      duration: "25 min",
-      icon: "sparkles",
+      title: "Black Dye Application",
+      description: "Professional black hair dye application",
+      price: "R105",
+      duration: "45 min",
+      icon: "paintbrush.fill",
       color: colors.accent,
     },
     {
       id: '4',
-      title: "Full Service",
-      description: "Haircut, beard trim, and hot shave",
-      price: "R450",
-      duration: "60 min",
-      icon: "star.fill",
+      title: "Colour Application",
+      description: "Custom colour dye application",
+      price: "R155",
+      duration: "50 min",
+      icon: "paintpalette.fill",
       color: colors.success,
+    },
+    {
+      id: '5',
+      title: "Line and Vynals",
+      description: "Sharp lines and vinyl designs",
+      price: "R35",
+      duration: "15 min",
+      icon: "line.3.horizontal",
+      color: colors.primary,
+    },
+    {
+      id: '6',
+      title: "Dsigns",
+      description: "Custom hair designs and patterns",
+      price: "R55+",
+      duration: "20 min",
+      icon: "star.fill",
+      color: colors.highlight,
+    },
+    {
+      id: '7',
+      title: "Eyebrow Twizzing",
+      description: "Professional eyebrow grooming",
+      price: "R45",
+      duration: "15 min",
+      icon: "eye.fill",
+      color: colors.accent,
+    },
+    {
+      id: '8',
+      title: "Beard Dye",
+      description: "Expert beard coloring service",
+      price: "R65",
+      duration: "30 min",
+      icon: "paintbrush",
+      color: colors.success,
+    },
+    {
+      id: '9',
+      title: "Beard Trim",
+      description: "Expert beard grooming and styling",
+      price: "R25",
+      duration: "15 min",
+      icon: "scissors",
+      color: colors.primary,
     }
   ];
 
@@ -63,7 +108,7 @@ export default function HomeScreen() {
       {Platform.OS === 'ios' && (
         <Stack.Screen
           options={{
-            title: "Barber On Call",
+            title: "Boika The Baber Mobile",
             headerRight: renderHeaderRight,
           }}
         />
@@ -81,8 +126,8 @@ export default function HomeScreen() {
             <View style={styles.heroIcon}>
               <IconSymbol name="scissors" size={48} color={colors.card} />
             </View>
-            <Text style={styles.heroTitle}>Premium Barber Service</Text>
-            <Text style={styles.heroSubtitle}>At Your Doorstep</Text>
+            <Text style={styles.heroTitle}>Boika The Baber</Text>
+            <Text style={styles.heroSubtitle}>Mobile Service</Text>
             <Text style={styles.heroDescription}>
               Professional grooming services delivered to your home. Book your appointment today!
             </Text>
@@ -125,7 +170,7 @@ export default function HomeScreen() {
             <Text style={styles.sectionTitle}>Why Choose Us?</Text>
             <View style={styles.featureItem}>
               <IconSymbol name="checkmark.circle.fill" size={24} color={colors.success} />
-              <Text style={styles.featureText}>Licensed & Experienced Barbers</Text>
+              <Text style={styles.featureText}>Licensed & Experienced Barber</Text>
             </View>
             <View style={styles.featureItem}>
               <IconSymbol name="checkmark.circle.fill" size={24} color={colors.success} />

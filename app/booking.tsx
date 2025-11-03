@@ -8,7 +8,6 @@ import DateTimePicker from '@react-native-community/datetimepicker';
 
 export default function BookingScreen() {
   const [selectedService, setSelectedService] = useState<string>('');
-  const [selectedBarber, setSelectedBarber] = useState<string>('');
   const [date, setDate] = useState(new Date());
   const [showDatePicker, setShowDatePicker] = useState(false);
   const [showTimePicker, setShowTimePicker] = useState(false);
@@ -18,16 +17,15 @@ export default function BookingScreen() {
   const [notes, setNotes] = useState('');
 
   const services = [
-    { id: '1', name: 'Classic Haircut', price: 'R200' },
-    { id: '2', name: 'Beard Trim', price: 'R120' },
-    { id: '3', name: 'Hot Shave', price: 'R180' },
-    { id: '4', name: 'Full Service', price: 'R450' },
-  ];
-
-  const barbers = [
-    { id: '1', name: 'Mike Johnson', specialty: 'Classic Cuts' },
-    { id: '2', name: 'David Smith', specialty: 'Modern Styles' },
-    { id: '3', name: 'James Brown', specialty: 'Beard Expert' },
+    { id: '1', name: 'Classic Adult Haircut', price: 'R225' },
+    { id: '2', name: 'Classic Kids Haircut', price: 'R175' },
+    { id: '3', name: 'Black Dye Application', price: 'R105' },
+    { id: '4', name: 'Colour Application', price: 'R155' },
+    { id: '5', name: 'Line and Vynals', price: 'R35' },
+    { id: '6', name: 'Dsigns', price: 'R55+' },
+    { id: '7', name: 'Eyebrow Twizzing', price: 'R45' },
+    { id: '8', name: 'Beard Dye', price: 'R65' },
+    { id: '9', name: 'Beard Trim', price: 'R25' },
   ];
 
   const onDateChange = (event: any, selectedDate?: Date) => {
@@ -48,7 +46,7 @@ export default function BookingScreen() {
   };
 
   const handleBooking = () => {
-    if (!selectedService || !selectedBarber || !address || !name || !phone) {
+    if (!selectedService || !address || !name || !phone) {
       Alert.alert('Missing Information', 'Please fill in all required fields.');
       return;
     }
@@ -151,37 +149,6 @@ export default function BookingScreen() {
                   </Text>
                 </View>
                 {selectedService === service.id && (
-                  <IconSymbol name="checkmark.circle.fill" size={24} color={colors.primary} />
-                )}
-              </Pressable>
-            ))}
-          </View>
-
-          {/* Barber Selection */}
-          <View style={styles.section}>
-            <Text style={styles.sectionTitle}>Choose Your Barber</Text>
-            {barbers.map((barber) => (
-              <Pressable
-                key={barber.id}
-                onPress={() => setSelectedBarber(barber.id)}
-                style={[
-                  styles.optionCard,
-                  selectedBarber === barber.id && styles.optionCardSelected
-                ]}
-              >
-                <View style={styles.barberIcon}>
-                  <IconSymbol name="person.fill" size={24} color={colors.card} />
-                </View>
-                <View style={styles.optionContent}>
-                  <Text style={[
-                    styles.optionTitle,
-                    selectedBarber === barber.id && styles.optionTitleSelected
-                  ]}>
-                    {barber.name}
-                  </Text>
-                  <Text style={styles.barberSpecialty}>{barber.specialty}</Text>
-                </View>
-                {selectedBarber === barber.id && (
                   <IconSymbol name="checkmark.circle.fill" size={24} color={colors.primary} />
                 )}
               </Pressable>
@@ -327,19 +294,6 @@ const styles = StyleSheet.create({
   optionPriceSelected: {
     color: colors.primary,
     fontWeight: '600',
-  },
-  barberIcon: {
-    width: 40,
-    height: 40,
-    borderRadius: 20,
-    backgroundColor: colors.primary,
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginRight: 12,
-  },
-  barberSpecialty: {
-    fontSize: 13,
-    color: colors.textSecondary,
   },
   dateTimeButton: {
     backgroundColor: colors.card,
